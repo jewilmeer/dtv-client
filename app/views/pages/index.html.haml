@@ -1,0 +1,28 @@
+%section#guides
+  .page-header
+    %h1 Recommended guides
+  %ul.thumbnails
+    - 2.times do
+      - %w(hot must_see new user).shuffle.each do |group|
+        %li.span6
+          .thumbnail
+            = image_tag "#{group}_1_block.jpeg", :width => 460
+%section#activity
+  .page-header
+    %h2 Just aired
+  %ul.thumbnails
+    - 5.times do 
+      - %w(hot_1_block.jpeg hot_2_block.jpeg user_1_block.jpeg user_2_block.jpeg).each do |image_name|
+        %li.span3
+          .thumbnail
+            = image_tag image_name, size: '210x150'
+            %h5 
+              Program name
+              %small
+                Just a title
+            %dl
+              %dt Watched 
+              %dd x times
+              %dt Hotness 
+              %dd very nasty
+            

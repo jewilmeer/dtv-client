@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Dtv client
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
+%body  
+  .navbar
+    .navbar-inner.navbar-fixed
+      .container
+        = link_to 'DTV Client', '#', class: :brand
+        %ul.nav
+          %li= link_to 'Series', '#'
+          %li= link_to 'Episodes', '#'
+        .pull-right
+          %a Login
+          \|
+          %a Register
+  
+  .container#main
+    = yield
