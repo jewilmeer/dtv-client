@@ -1,33 +1,101 @@
-%header.subhead
-  %h1 Digital Tv Guide
-  %p.lead
-    When does the next episode of house airs? Homeland was cool, wat other serie could I watch? Digital TV guide will help you with that. 
-  %ul.nav.tabs
-    %li= link_to 'Total serie overview', ''
-    %li= link_to 'Create your own guide', ''
-%section#guides  
-  %ul.thumbnails
-    - 2.times do      
-      - %w(hot must_see new user).shuffle.each do |group|
-        %li.span6
-          .thumbnail
-            = image_tag "#{group}_1_block.jpeg", :width => 460
-%section#activity
-  .page-header
-    %h2 Just aired
-  %ul.thumbnails
-    - 5.times do 
-      - %w(hot_1_block.jpeg hot_2_block.jpeg user_1_block.jpeg user_2_block.jpeg).each do |image_name|
-        %li.span3
-          .thumbnail
-            = image_tag image_name, size: '210x150'
-            %h5 
-              Program name
-              %small
-                Just a title
-            %dl
-              %dt Watched 
-              %dd x times
-              %dt Hotness 
-              %dd very nasty
+- episode_titles = ["Tarantella", "Episode 2", "Lethal Weapons", "Vegas Baby, Vegas!", "Gambon Corner Gets Its Name", "The Yoga Bear", "Group Four! Then the Wild Card!", "The Sentimental Bloke", "Chuck Versus the Cat Squad", "Senior's Vintage Project 2", "The Naked Man", "Ronnie Corbett, Greg Kinnear, Shaun Williamson and Ricky Gervais", "Episode 13", "First Kiss", "Here We Go Again", "When the Levee Breaks", "The Futurama Holiday Spectacular", "No Ordinary Accident", "The Vest", "Social Psychology", "The Day of the Clown (2)", "Double Jeopardy", "The Monster Within", "Chuck Versus the Cougars", "A Better Human Being", "Black Pearl", "Under God's Power She Flourishes", "The Girl Next Door ", "Baby Boom", "Heart of Glass", "Sucker Punch", "By the Book", "Lance Armstrong Bike 1", "Past Tense", "A Possum on Chemo", "Pleased to Meet Me", "Red-Handed", "Throwdown", "First practice! Vigorous Kazuya & worn-out Tatsuya!?", "J-Cat", "Tucson, AZ 1", "The Top Gear Generation Game", "Stone Mountain", "Episode 3", "Table Cloth Chaos", "Gilted Lily", "No Good Deed", "TBA", "The Monster at the End of this Book", "The Fight"]
+.span10
+  %header
+    %ul.breadcrumb
+      %li
+        = link_to 'Home', root_path
+        %span.divider /
+      %li
+        = link_to 'Programs', root_path
+        %span.divider /
+      %li= link_to 'MythBusters', pages_path(id: 'program')
+      %li.pull-right= link_to 'Next serie'
+      %li.pull-right
+        = link_to 'Previous serie'
+        %span.divider= "|"
+  .row-fluid
+    .span9
+      %header
+        %h1 MythBusters
+      %section#serie-graphics
+        .carousel.slide
+          .carousel-inner
+            .item{style: 'background-image: url(http://images.jewilmeer.com/tvdb_images/10413/original_1320285611.jpg?1320285611)'}
+            .item{style: 'background-image: url(http://images.jewilmeer.com/tvdb_images/10417/original_1328358672.jpg?1328358672)'}
+      %section#season-detail
+        %h3 Season details
+        - nr_of_seasons = (1..10).to_a.sample
+        .tabbable.tabs-left
+          .row-fluid
+            .span2
+              %ul.nav.nav-tabs
+                - nr_of_seasons.times do |i|
+                  - if i.succ == nr_of_seasons #last
+                    %li.active= link_to "Season #{i.succ}", "#season-#{i.succ}", data: {toggle: :tab}
+                  - else
+                    %li= link_to "Season #{i.succ}", "#season-#{i.succ}", data: {toggle: :tab}
+            .span10
+              .tab-content
+                - nr_of_seasons.times do |i|
+                  - if i.succ == nr_of_seasons #last
+                    .tab-pane.fade.active.in{id: "season-#{i.succ}"}
+                      %table.table.table-bordered.table-striped 
+                        %thead
+                          %tr
+                            %th Name
+                            %th Airdate
+                        %tbody
+                          - nr_of_episodes = (6..22).to_a.sample.times do |i|
+                            %tr
+                              %td= link_to episode_titles.sample, ''
+                              %td= i.weeks.ago.to_date.to_s(:long)
+                  - else
+                    .tab-pane.fade{id: "season-#{i.succ}"}
+                      %table.table.table-bordered.table-striped 
+                        %thead
+                          %tr
+                            %th Name
+                            %th Airdate
+                        %tbody
+                          - nr_of_episodes = (6..22).to_a.sample.times do |i|
+                            %tr
+                              %td= link_to episode_titles.sample, ''
+                              %td= i.weeks.ago.to_date.to_s(:long)
             
+    .span3.pull-right
+      %section#recommendations
+        .panel
+          %h4 You might also like
+          %ul.unstyled
+            %li= link_to 'Brainiac'
+            %li= link_to 'An Idiot Abroad'
+            %li= link_to 'Top Gear'
+          .alert.alert-notice
+            %span.label.label-notice Notice
+            Needs pictures instead of text
+      %section#user-details
+        .panel
+          %h4 You and Mythbuster
+          %p
+            This serie is your
+            %span.label.label-info Snack 
+            and 
+            %span.label.label-info Download 
+            guide
+          %h5 Add Additonal tags
+          %form.form-inline
+            .control-group
+              %input{type: :text, name: :tag}
+              %button.btn Add
+              
+      %section#program-details
+        
+        .panel
+          %h4 Additional information
+          %dl
+            %dt Genres
+            %dd Science, Comedy
+            %dt Actors
+            %dd James dingus, Adam geschift
+            %dt Poularity
+            %dd== #{(1..100).to_a.sample}%
