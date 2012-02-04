@@ -37,6 +37,7 @@ gem 'coffee-haml-filter'
 
 group :development do
   gem 'heroku'
+  gem "test_track"
 end
 
 group :test do
@@ -44,4 +45,4 @@ group :test do
   gem 'turn', :require => false
 end
 
-gem "test_track"
+
