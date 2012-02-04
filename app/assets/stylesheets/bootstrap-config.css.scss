@@ -4,8 +4,13 @@ body {
 }
 .episode {
   @include clearfix();
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,white), color-stop(100%,#F4F4F4));
+  background: #efefef;
+  background: -moz-linear-gradient(top, #FFFFFF 0%, #F4F4F4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#F4F4F4));
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#F4F4F4',GradientType=0 );
   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.25);
   padding: 10px 20px;
   .description {
     padding: 10px;
@@ -14,19 +19,30 @@ body {
 }
 
 .panel {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,white), color-stop(100%,#F4F4F4));
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  padding: 20px 20px 2px 20px;
   @include clearfix();
-  margin-bottom: 20px;
+  padding: 20px 20px 2px 20px;
+  background: #efefef;
+  background: -moz-linear-gradient(top, #FFFFFF 0%, #F4F4F4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#F4F4F4));
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#F4F4F4',GradientType=0 );
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+  margin: 0 0 20px 0;
 }
 
 section#serie-graphics {
   .carousel {
     height: 300px;
+    background: #efefef;
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #F4F4F4 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#F4F4F4));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#F4F4F4',GradientType=0 );
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,white), color-stop(100%,#F4F4F4));
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.25);
     -webkit-transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
     &:hover {
       height: 600px;    
       .item {
@@ -36,6 +52,7 @@ section#serie-graphics {
   }
   .item {
     -webkit-transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
     height: 300px;
     width: 100%;
     min-height: 300px;

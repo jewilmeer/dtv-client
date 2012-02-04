@@ -20,7 +20,7 @@
       %section#serie-graphics
         .carousel.slide
           .carousel-inner
-            .item{style: 'background-image: url(http://images.jewilmeer.com/tvdb_images/10413/original_1320285611.jpg?1320285611)'}
+            .item.active{style: 'background-image: url(http://images.jewilmeer.com/tvdb_images/10413/original_1320285611.jpg?1320285611)'}
             .item{style: 'background-image: url(http://images.jewilmeer.com/tvdb_images/10417/original_1328358672.jpg?1328358672)'}
       %section#season-detail
         %h3 Season details
@@ -74,20 +74,7 @@
             %span.label.label-notice Notice
             Needs pictures instead of text
       %section#user-details
-        .panel
-          %h4 You and Mythbuster
-          %p
-            This serie is your
-            %span.label.label-info Snack 
-            and 
-            %span.label.label-info Download 
-            guide
-          %h5 Add Additonal tags
-          %form.form-inline
-            .control-group
-              %input{type: :text, name: :tag}
-              %button.btn Add
-              
+        = render partial: 'programs/tags'
       %section#program-details
         
         .panel

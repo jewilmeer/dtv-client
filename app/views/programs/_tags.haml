@@ -1,0 +1,39 @@
+- state = %w(not_added added added_with_tags).sample.to_sym
+
+- case state
+- when :not_added
+  .panel
+    %h4 You and Mythbusters
+    %p
+      This serie is not in your guide, whould you like to add it?
+      .btn.btn-primary Add Mythbusters
+    %p.muted Steef, Jewilmeer and 2 other users also follow this serie
+
+
+- when :added
+  .panel 
+    %h4 You and Mythbusters
+    %p Mythbuster is in your guide but you have not specified any tags yet. 
+    %h5 Add tags
+    %form.form-inline
+      .control-group
+        %input{type: :text, name: :tag}
+        %button.btn Add
+      %p.help-block Tagging makes it easier to organize your Series. They are displayed as seperate guides
+
+- when :added_with_tags
+  .panel
+    %h4 You and Mythbusters
+    %p
+      This serie is your
+      %span.label.label-info Snack 
+      and 
+      %span.label.label-info Download 
+      guide
+    %h5 Add Additonal tags
+    %form.form-inline
+      .control-group
+        %input{type: :text, name: :tag}
+        %button.btn Add
+      %p.help-block Tagging makes it easier to organize your Series. They are displayed as seperate guides
+
