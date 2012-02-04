@@ -58,29 +58,32 @@
                       = link_to series.sample, ''
                       \- 
                       = link_to episode_titles.sample
-                    %img.pull-right{src: 'http://placehold.it/260x180', width: 260, height: 180}
-                    %p.description
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    .episode-controls.btn-toolbar
-                      .btn-group
-                        %a.btn.btn-info Search
-                        %a.btn.btn-info.dropdown-toggle{data: {toggle: :dropdown}}
-                          %span.caret
-                        %ul.dropdown-menu
-                          %li= link_to 'Search low res'
-                          %li= link_to 'Seach HD'
-                      .btn-group
-                        %a.btn.btn-success Download
-                        %a.btn.btn-success.dropdown-toggle{data: {toggle: :dropdown}}
-                          %span.caret
-                        %ul.dropdown-menu
-                          %li= link_to 'Download low res'
-                          %li= link_to 'Download HD'
+                    .row-fluid
+                      .span8.pull-left
+                        %p.description
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        .episode-controls.btn-toolbar
+                          .btn-group
+                            %a.btn.btn-info Search
+                            %a.btn.btn-info.dropdown-toggle{data: {toggle: :dropdown}}
+                              %span.caret
+                            %ul.dropdown-menu
+                              %li= link_to 'Search low res'
+                              %li= link_to 'Seach HD'
+                          .btn-group
+                            %a.btn.btn-success Download
+                            %a.btn.btn-success.dropdown-toggle{data: {toggle: :dropdown}}
+                              %span.caret
+                            %ul.dropdown-menu
+                              %li= link_to 'Download low res'
+                              %li= link_to 'Download HD'
+                      .span4.pull-right
+                        %img{src: 'http://placehold.it/260x180', width: 260, height: 180}
 
         .span3
           %header
