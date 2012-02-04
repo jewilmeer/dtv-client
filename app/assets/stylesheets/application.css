@@ -2,25 +2,7 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require bootstrap-config
  *= require_tree . 
  *= require_self
 */
-
-
-
-#main.container {
-  background-color: rgba(255,255,255,0.9);
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  padding: 20px 10px;
-}
-.container> .content {
-  margin-top: 40px;
-}  
-
-.topbar .btn {
-  border: 0;
-}
-body {
-  padding-top: 40px;
-  background: #eee;
-}

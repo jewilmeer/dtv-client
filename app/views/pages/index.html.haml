@@ -1,8 +1,13 @@
-%section#guides
-  .page-header
-    %h1 Recommended guides
+%header.subhead
+  %h1 Digital Tv Guide
+  %p.lead
+    When does the next episode of house airs? Homeland was cool, wat other serie could I watch? Digital TV guide will help you with that. 
+  %ul.nav.tabs
+    %li= link_to 'Total serie overview', ''
+    %li= link_to 'Create your own guide', ''
+%section#guides  
   %ul.thumbnails
-    - 2.times do
+    - 2.times do      
       - %w(hot must_see new user).shuffle.each do |group|
         %li.span6
           .thumbnail

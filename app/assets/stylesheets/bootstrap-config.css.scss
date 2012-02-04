@@ -1,0 +1,16 @@
+@import 'bootstrap';
+body {
+  padding-top: 60px;
+}
+.episode {
+  @include clearfix();
+  .description {
+    padding: 10px;
+    margin-right: 270px;
+    font-size: 0.9em;
+  }
+  img.pull-right {
+    
+  }
+}
+@import 'bootstrap/responsive';

@@ -7,11 +7,15 @@ gem 'rails', '3.1.1'
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'uglifier', '>= 1.0.3'
-  # gem 'bootstrap-sass', git: 'git://github.com/thomas-mcdonald/bootstrap-sass.git', branch: "2.0"
-  gem 'zurb-foundation'
+  gem 'bootstrap-sass', git: 'git://github.com/thomas-mcdonald/bootstrap-sass.git', branch: "2.0"
+  # gem 'zurb-foundation'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'haml_coffee_assets'
   gem 'execjs'
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem 'jquery-rails'
@@ -30,6 +34,10 @@ gem 'coffee-haml-filter'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+group :development do
+  gem 'heroku'
+end
 
 group :test do
   # Pretty printed test output

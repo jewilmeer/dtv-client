@@ -56,6 +56,8 @@ DtvClient::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
+  resources :pages, only: [:index, :show]
+
   mount TestTrack::Engine => "test" unless Rails.env.production?
 
   root :to => 'pages#index'
