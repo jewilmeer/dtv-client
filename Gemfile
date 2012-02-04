@@ -37,6 +37,7 @@ gem 'coffee-haml-filter'
 
 group :development do
   gem 'heroku'
+  gem 'mysql2'
   # gem "test_track"
 end
 
