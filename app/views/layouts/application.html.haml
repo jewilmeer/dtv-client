@@ -8,20 +8,7 @@
     %meta{name: :viewport, content: 'width=device-width, initial-scale=1.0'}
 
   %body
-    %nav.navbar.navbar-fixed-top
-      .navbar-inner
-        .container-fluid
-          %a.btn.btn-navbar{data: {toggle: 'collapse', target: '.nav-collapse'}}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          = link_to 'DTV Client', root_path, class: :brand
-          .nav-collapse
-            %ul.nav
-              %li= link_to 'Guide', page_path(id: :guide)
-              %li= link_to 'Episodes', '#'
-            %form.navbar-search.pull-left
-              %input.search-query{placeholder: 'Search'}
+    = render 'layouts/navbar'
     .container-fluid
       .row-fluid
         .span2
@@ -30,12 +17,13 @@
               %li.nav-header My guides
               %li.active= link_to 'All', ''
               %li= link_to 'Starred', ''
-              %li= link_to 'Snack', ''
-              %li= link_to 'To be sorted', ''
-              %li= link_to 'Recommended', ''
-              %li= link_to 'Little bit to long for this just as a test', ''
+              - if @logged_in
+                %li= link_to 'Snack', ''
+                %li= link_to 'To be sorted', ''
+                %li= link_to 'Recommended', ''
+                %li= link_to 'Little bit to long for this just as a test', ''
               %li.nav-header Other guides
-              %li= link_to 'All episodes'
+              %li= link_to 'Full guide'
               %li= link_to 'Best rated'
               %li= link_to 'SciFi'
               %li.nav-header Other user guides

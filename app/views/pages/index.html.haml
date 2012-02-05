@@ -74,15 +74,18 @@
             %span.label.label-notice Notice
             Needs pictures instead of text
       %section#user-details
-        = render partial: 'programs/tags'
+        = render partial: 'series/tags'
       %section#program-details
-        
         .panel
           %h4 Additional information
           %dl
             %dt Genres
-            %dd Science, Comedy
+            %dd 
+              - linked_genres = ['Science', 'Comedy'].map{|genre| link_to genre, '#' }
+              = linked_genres.to_sentence.html_safe
             %dt Actors
-            %dd James dingus, Adam geschift
+            %dd 
+              - linked_actors = ['James dingus', 'Adam Savage'].map{|actor| link_to actor, '#' }
+              = linked_actors.to_sentence.html_safe
             %dt Poularity
             %dd== #{(1..100).to_a.sample}%
