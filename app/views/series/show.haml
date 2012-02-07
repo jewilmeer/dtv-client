@@ -7,7 +7,7 @@
       %li
         = link_to 'Programs', root_path
         %span.divider /
-      %li= link_to 'MythBusters', pages_path(id: 'program')
+      %li= link_to @serie.name, @serie
       %li.pull-right= link_to 'Next serie'
       %li.pull-right
         = link_to 'Previous serie'
@@ -15,12 +15,17 @@
   .row-fluid
     .span9
       %header
-        %h1 MythBusters
+        %h1 
+          - if [true, false].sample
+            .btn ★
+          - else
+            .btn ☆
+          = @serie.name
       %section#serie-graphics
         .carousel.slide
           .carousel-inner
-            .item.active{style: 'background-image: url(http://images.jewilmeer.com/tvdb_images/10413/original_1320285611.jpg?1320285611)'}
-            .item{style: 'background-image: url(http://images.jewilmeer.com/tvdb_images/10417/original_1328358672.jpg?1328358672)'}
+            - @serie.fanart.each_with_index do |fanart, i|
+              .item{style: "background-image: url(#{fanart})", class: ('active' if i.zero?)}
       %section#season-detail
         %h3 Season details
         - nr_of_seasons = (1..10).to_a.sample

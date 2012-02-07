@@ -10,8 +10,8 @@
         %ul.nav
           %li= link_to 'Guide', page_path(id: :guide)
           %li= link_to 'Episodes', '#'
-        %form.navbar-search.pull-left
-          %input.search-query{placeholder: 'Search'}
+        = form_for :program, url: search_series_index_url, html: {class: %(navbar-search pull-left), method: :get} do
+          %input.search-query{placeholder: 'Search', name: :query}
       %ul.nav.pull-right
         - if @logged_in
           %li= link_to 'Logout', url_for( params.merge(login: false) )

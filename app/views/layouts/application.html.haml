@@ -12,22 +12,22 @@
     .container-fluid
       .row-fluid
         .span2
-          .sidebar.well{style: 'padding: 8px 0'}
+          #sidebar.well{style: 'padding: 8px 0'}
             %ul.nav.nav-list
-              %li.nav-header My guides
-              %li.active= link_to 'All', ''
+              %li.nav-header My stations
+              %li.active= link_to 'All'
               %li= link_to 'Starred', ''
               - if @logged_in
                 %li= link_to 'Snack', ''
                 %li= link_to 'To be sorted', ''
                 %li= link_to 'Recommended', ''
                 %li= link_to 'Little bit to long for this just as a test', ''
-              %li.nav-header Other guides
-              %li= link_to 'Full guide'
+              %li.nav-header Other stations
+              %li= link_to 'All stations'
               %li= link_to 'Best rated'
               %li= link_to 'SciFi'
-              %li.nav-header Other user guides
-              %li= link_to 'Steef\'s snack collection'
-              %li= link_to 'JW\'s Chick collection'
+              %li.nav-header Other user stations
+              %li= link_to 'Steef\'s snack station'
+              %li= link_to 'JW\'s Chick station'
         = yield              
 
