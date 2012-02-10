@@ -1,6 +1,7 @@
+- serie = Serie.find_by_name @demo[:series].sample
 %li.episode
   %h4
-    = link_to @demo[:series].sample, ''
+    = link_to serie.name, serie
     \- 
     = link_to @demo[:episode_titles].sample
   .row-fluid
