@@ -16,11 +16,12 @@
     .span9
       %header
         %h1 
-          - if [true, false].sample
-            .btn ★
-          - else
-            .btn ☆
           = @serie.name
+          = link_to '', class: :fav do
+            - if [true, false].sample
+              ★
+            - else
+              ☆
       %section#serie-graphics
         .carousel.slide
           .carousel-inner
