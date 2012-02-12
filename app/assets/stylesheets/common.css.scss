@@ -1,0 +1,51 @@
+@import 'bootstrap/mixins';
+body {
+  padding-top: 60px;
+}
+
+.panel {
+  @include clearfix();
+  @include gradient-vertical(#FFF, #F4F4F4);
+  @include box-shadow(0 2px 5px rgba(0,0,0,0.15));
+  padding: 20px 20px 2px 20px;
+  margin: 0 0 20px 0;
+}
+
+section#serie-graphics {
+  .carousel {
+    height: 300px;
+
+    @include gradient-vertical(#FFF, #F4F4F4);
+    @include box-shadow(0 2px 5px rgba(0,0,0,0.15));
+
+    -webkit-transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
+    &:hover {
+      height: 600px;    
+      .item {
+        height: 600px;
+      }
+    }
+  }
+  .item {
+    @include background-size(cover);
+    -webkit-transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
+
+    height: 300px;
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+    background-position: top center;
+  }
+}
+
+header {
+  margin-bottom: 10px;
+}
+.banner { 
+  margin-bottom: 20px; 
+}
+.subnav {
+  width: 100%;
+}
