@@ -12,6 +12,5 @@ class SeriesController < ApplicationController
     @series = Serie.where('name LIKE ?', "%#{params[:query]}%").all
 
     redirect_to @series.first if @series.length == 1
-    
   end
 end

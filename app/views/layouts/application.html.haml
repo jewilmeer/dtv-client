@@ -15,7 +15,7 @@
           #sidebar.well{style: 'padding: 8px 0'}
             %ul.nav.nav-list
               %li.nav-header My stations
-              %li{class: (:active if params[:id] == 'guide' && @logged_in)}= link_to 'All episodes'
+              %li{class: (:active if params[:id] == 'guide' && @logged_in)}= link_to 'All episodes', page_path(:guide)
               %li= link_to 'Starred', ''
               - if @logged_in
                 %li= link_to 'Snack', ''
@@ -23,7 +23,7 @@
                 %li= link_to 'Recommended', ''
                 %li= link_to 'Little bit to long for this just as a test', ''
               %li.nav-header Other stations
-              %li{class: (:active if params[:id] == 'guide' && !@logged_in)}= link_to 'All episodes'
+              %li{class: (:active if params[:id] == 'guide' && !@logged_in)}= link_to 'All episodes', page_path(:guide)
               %li= link_to 'Best rated'
               %li= link_to 'SciFi'
               %li.nav-header Other user stations

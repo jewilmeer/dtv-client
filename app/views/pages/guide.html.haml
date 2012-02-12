@@ -11,10 +11,12 @@
           = link_to 'Stations', root_path
         %span.divider /
       %li= link_to 'All', page_path(:guide)
+    %h1== Station - All #{'my' if @logged_in} stations
   .row-fluid
     .span8
       %header
         %h2 Just aired episodes
+
       - unless @logged_in
         .alert.alert-block.alert-info.fade.in
           %a.close{data: {dismiss: 'alert'}} &times;

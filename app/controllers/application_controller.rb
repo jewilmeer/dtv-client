@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::Base
-  # protect_from_forgery
+  protect_from_forgery
   before_filter :set_demo_vars
 
   def set_demo_vars
-    logger.debug "session logged in... #{session[:logged_in].inspect}"
     if params[:login]
       session.delete(:logged_in) if params[:login] == "false"
       session[:logged_in] = true if params[:login] == "true"
