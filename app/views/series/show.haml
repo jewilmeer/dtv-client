@@ -8,9 +8,9 @@
         = link_to 'Series', root_path
         %span.divider /
       %li= link_to @serie.name, @serie
-      %li.pull-right= link_to 'Next serie'
+      %li.pull-right= link_to 'Next serie', series_path(Serie.pluck(:id).sample)
       %li.pull-right
-        = link_to 'Previous serie'
+        = link_to 'Previous serie', series_path(Serie.pluck(:id).sample)
         %span.divider= "|"
   .row-fluid
     .span9

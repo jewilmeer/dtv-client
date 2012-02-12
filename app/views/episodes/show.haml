@@ -12,8 +12,8 @@
         %span.divider /
       %li= link_to @episode.title, series_episode_path(@serie, @episode)
       %li.pull-right
-        = link_to 'Next episode'
+        = link_to 'Next episode', series_episode_path(@serie, @demo[:episode_titles].sample.parameterize)
       %li.pull-right
-        = link_to 'Previous serie'
+        = link_to 'Previous episode', series_episode_path(@serie, @demo[:episode_titles].sample.parameterize)
         %span.divider= "|"
   %h1= @episode.full_episode_title
