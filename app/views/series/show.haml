@@ -51,8 +51,9 @@
                             %th Airdate
                         %tbody
                           - nr_of_episodes = (6..22).to_a.sample.times do |i|
+                            - episode = @demo[:episode_titles].sample
                             %tr
-                              %td= link_to @demo[:episode_titles].sample, ''
+                              %td= link_to episode, series_episode_path(@serie, episode.parameterize)
                               %td= i.weeks.ago.to_date.to_s(:long)
                   - else
                     .tab-pane.fade{id: "season-#{i.succ}"}
@@ -63,8 +64,9 @@
                             %th Airdate
                         %tbody
                           - nr_of_episodes = (6..22).to_a.sample.times do |i|
+                            - episode = @demo[:episode_titles].sample
                             %tr
-                              %td= link_to @demo[:episode_titles].sample, ''
+                              %td= link_to episode, series_episode_path(@serie, episode.parameterize)
                               %td= i.weeks.ago.to_date.to_s(:long)
             
     .span3.pull-right
