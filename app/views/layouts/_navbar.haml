@@ -12,8 +12,8 @@
           %li= link_to 'Episodes', '#'
         = form_for :program, url: search_series_index_url, html: {class: %(navbar-search pull-left), method: :get} do
           %input.search-query{placeholder: 'Search', name: :query, autocomplete: :off}
-      %ul.nav.pull-right
-        - if @logged_in
-          %li= link_to 'Logout', url_for( params.merge(login: false) )
-        - else
-          %li= link_to 'Login', url_for( params.merge(login: true) )
+        %ul.nav.pull-right
+          - if @logged_in
+            %li= link_to 'Logout', url_for( params.merge(login: false) )
+          - else
+            %li= link_to 'Login', url_for( params.merge(login: true) )

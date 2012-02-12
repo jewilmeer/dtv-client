@@ -1,0 +1,19 @@
+.span10
+  %header
+    %ul.breadcrumb
+      %li
+        = link_to 'Home', root_path
+        %span.divider /
+      %li
+        = link_to 'Series', root_path
+        %span.divider /
+      %li
+        = link_to @serie.name, @serie
+        %span.divider /
+      %li= link_to @episode.title, series_episode_path(@serie, @episode)
+      %li.pull-right
+        = link_to 'Next episode'
+      %li.pull-right
+        = link_to 'Previous serie'
+        %span.divider= "|"
+  %h1= @episode.full_episode_title

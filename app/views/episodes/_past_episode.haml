@@ -1,9 +1,10 @@
 - serie = Serie.find_by_name @demo[:series].sample
+- episode = @demo[:episode_titles].sample
 %li.episode
   %h4
     = link_to serie.name, serie
     \- 
-    = link_to @demo[:episode_titles].sample
+    = link_to episode, series_episode_path(serie, episode.parameterize)
   .row-fluid
     .span8.pull-left
       %p.description

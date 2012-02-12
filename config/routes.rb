@@ -57,6 +57,7 @@ DtvClient::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
 
   resources :series, only: [:index, :show] do
+    resources :episodes
     collection do
       get :search
     end
