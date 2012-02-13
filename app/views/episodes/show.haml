@@ -16,4 +16,34 @@
       %li.pull-right
         = link_to 'Previous episode', series_episode_path(@serie, @demo[:episode_titles].sample.parameterize)
         %span.divider= "|"
-  %h1= @episode.full_episode_title
+
+  .row-fluid
+    .span12
+      %h1= @episode.full_episode_title
+      .panel
+        .row
+          .span4
+            %img{ src: @serie.fanart.first }
+          .span7
+            %dl
+              %dt Description
+              %dd 
+                %p 
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              %dt Airdate
+              %dd= [*-100..100].sample.days.ago.to_date.to_s(:long)
+              %dt Episode number
+              %dd= @episode.number
+            - if @logged_in
+              = render partial: 'episodes/buttons'
+
+  %h2 Other episodes this season
+  .alert.alert-info
+    %span.label.label-info Notice
+    Any better ideas? With the final implementation the row should be highlighted
+  = render partial: 'series/season'

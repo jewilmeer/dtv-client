@@ -44,31 +44,10 @@
                 - nr_of_seasons.times do |i|
                   - if i.succ == nr_of_seasons #last
                     .tab-pane.fade.active.in{id: "season-#{i.succ}"}
-                      %table.table.table-bordered.table-striped 
-                        %thead
-                          %tr
-                            %th Name
-                            %th Airdate
-                        %tbody
-                          - nr_of_episodes = (6..22).to_a.sample.times do |i|
-                            - episode = @demo[:episode_titles].sample
-                            %tr
-                              %td= link_to episode, series_episode_path(@serie, episode.parameterize)
-                              %td= i.weeks.ago.to_date.to_s(:long)
+                      = render partial: 'season'
                   - else
                     .tab-pane.fade{id: "season-#{i.succ}"}
-                      %table.table.table-bordered.table-striped 
-                        %thead
-                          %tr
-                            %th Name
-                            %th Airdate
-                        %tbody
-                          - nr_of_episodes = (6..22).to_a.sample.times do |i|
-                            - episode = @demo[:episode_titles].sample
-                            %tr
-                              %td= link_to episode, series_episode_path(@serie, episode.parameterize)
-                              %td= i.weeks.ago.to_date.to_s(:long)
-            
+                      = render partial: 'season'            
     .span3.pull-right
       %section#recommendations
         .panel

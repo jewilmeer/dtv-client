@@ -10,10 +10,8 @@ rails s
 
 ==== TODO ====
 
-- episode#show page
 - tag#show page (default)
 - tag#show page (actor/ppl)
-- programs#search result page
 
 ==== Things to workout ====
 - really simple auth without any hassle (google account signup?)

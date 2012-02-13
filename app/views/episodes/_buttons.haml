@@ -1,0 +1,15 @@
+.episode-controls.btn-toolbar
+  .btn-group
+    %a.btn.btn-info Search
+    %a.btn.btn-info.dropdown-toggle{data: {toggle: :dropdown}}
+      %span.caret
+    %ul.dropdown-menu
+      %li= link_to 'Search low res'
+      %li= link_to 'Seach HD'
+  .btn-group
+    %a.btn.btn-success Download
+    %a.btn.btn-success.dropdown-toggle{data: {toggle: :dropdown}}
+      %span.caret
+    %ul.dropdown-menu
+      %li= link_to 'Download low res'
+      %li= link_to 'Download HD'
