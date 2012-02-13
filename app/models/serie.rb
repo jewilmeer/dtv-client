@@ -1,6 +1,6 @@
 class Serie < ActiveRecord::Base
   scope :search, lambda {|query|
-    if ActiveRecord::Base.connection.class.to_s.downcase['postgre']
+    if ActiveRecord::Base.connection.adapter_name.downcase['postgre']
       where('name ILIKE ?', "#{query}%")
     else
       where('name LIKE ?', "#{query}%")
