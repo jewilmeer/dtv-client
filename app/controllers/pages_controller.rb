@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def index
-    redirect_to series_path( Serie.find_by_name 'mythbusters' )
+    serie = Serie.where 'mythbusters'
+    serie ||= Serie.first
+    redirect_to series_path( serie )
   end
 
   def show
