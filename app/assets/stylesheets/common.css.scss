@@ -1,8 +1,4 @@
 @import 'bootstrap/mixins';
-body {
-  padding-top: 60px;
-}
-
 .panel {
   @include clearfix();
   @include gradient-vertical(#FFF, #F4F4F4);

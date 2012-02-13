@@ -1,3 +1,5 @@
 @import 'bootstrap';
-@import 'common';
+body {
+  padding-top: 60px; //otherwise responsive design for tablet/phone breaks
+}
 @import 'bootstrap-responsive';
