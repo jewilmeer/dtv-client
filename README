@@ -4,9 +4,9 @@ This project is currently only views. The small backend is for providing sample 
 
 cp config/database.yml.sample config/database.yml
 bundle
-rake db:migrate db:seed
+rake db:create
+rake db:schema:load db:seed
 rails s
-
 
 ==== TODO ====
 
