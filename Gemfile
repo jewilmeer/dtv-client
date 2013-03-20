@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2'
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -38,7 +39,6 @@ gem 'coffee-haml-filter'
 
 group :development do
   gem 'heroku'
-  gem 'mysql2'
   # gem "test_track"
 end
 
